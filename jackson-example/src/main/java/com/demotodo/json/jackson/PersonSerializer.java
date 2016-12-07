@@ -6,7 +6,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 /**
  * Created by bribin.zheng on 2016/12/7.
  */
-public class Person {
+public class PersonSerializer {
 
     public long id;
     String name;

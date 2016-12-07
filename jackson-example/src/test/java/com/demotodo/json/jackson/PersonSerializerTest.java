@@ -11,14 +11,14 @@ import static org.junit.Assert.assertTrue;
 /**
  * Created by bribin.zheng on 2016/12/7.
  */
-public class PersonTest {
+public class PersonSerializerTest {
 
     @Test
     public void testSerializer() throws Exception {
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
-        Person person = objectMapper.readerFor(Person.class)
+        PersonSerializer person = objectMapper.readerFor(PersonSerializer.class)
             .readValue("{\"id\":10, \"name\":\"abc\", \"male\": true, \"enabled\": 1}");
 
         assertEquals(10, person.id);
