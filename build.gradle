@@ -1,6 +1,11 @@
 group 'com.demotodo.example'
 version '1.0-SNAPSHOT'
 
+ext {
+    jacksonVersion = "2.8.5"
+    gsonVersion = "2.8.0"
+}
+
 subprojects {
     repositories {
         mavenLocal()
@@ -20,11 +25,19 @@ subprojects {
 }
 
 project('jackson-example') {
-    apply plugin: 'java'
-
     dependencies {
         compile(
-                "com.fasterxml.jackson.core:jackson-databind:2.8.5"
+                "com.fasterxml.jackson.core:jackson-core:${jacksonVersion}",
+                "com.fasterxml.jackson.core:jackson-annotations:${jacksonVersion}",
+                "com.fasterxml.jackson.core:jackson-databind:${jacksonVersion}"
+        )
+    }
+}
+
+project('gson-example') {
+    dependencies {
+        compile(
+                "com.google.code.gson:gson:${gsonVersion}"
         )
     }
 }

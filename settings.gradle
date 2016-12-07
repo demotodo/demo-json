@@ -1,3 +1,4 @@
 rootProject.name = 'demo-json'
 
 include 'jackson-example'
+include 'gson-example'
