@@ -1,0 +1,3 @@
+rootProject.name = 'demo-json'
+
+include 'jackson-example'
