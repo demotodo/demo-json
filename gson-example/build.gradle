@@ -1,0 +1,9 @@
+ext {
+    gsonVersion = "2.8.0"
+}
+
+dependencies {
+    compile(
+            "com.google.code.gson:gson:${gsonVersion}"
+    )
+}
