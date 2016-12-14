@@ -9,5 +9,23 @@ dependencies {
             "com.fasterxml.jackson.core:jackson-annotations:${jacksonVersion}",
             "com.fasterxml.jackson.core:jackson-databind:${jacksonVersion}",
             "com.fasterxml:classmate:${classmateVersion}",
+
+            "com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.4.5",
+            "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.6.3",
+
+            "com.fasterxml.jackson.datatype:jackson-datatype-jdk7:2.6.3",
+            "com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.8.4",
+            "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.6.1",
+            "com.fasterxml.jackson.datatype:jackson-datatype-joda:2.8.3",
+            "com.fasterxml.jackson.datatype:jackson-datatype-guava:2.8.4",
+            "com.fasterxml.jackson.datatype:jackson-datatypes-collections:2.8.4",
+
+            "com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.8.3",
+            "com.fasterxml.jackson.jaxrs:jackson-jaxrs-xml-provider:2.8.3",
+
+            "com.fasterxml.jackson.module:jackson-module-jaxb-annotations:2.8.3",
+            "com.fasterxml.jackson.module:jackson-module-afterburner:2.8.4",
+
+            "com.fasterxml.jackson.module:jackson-module-swagger:0.5.0",
     )
 }

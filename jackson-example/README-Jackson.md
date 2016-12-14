@@ -115,6 +115,15 @@ Annotation introspector to use for serialization process is configured separatel
     mapper.getSerializationConfig().setAnnotationIntrospector(introspector);
 ```
 
+But you do not have to choose between Jackson and JAXB annotations: it is possible and easy to use both. 
+You just have to decide which should have precedence, in case both would define a configuration property. With that, you can construct an annotation introspector. For example: to use JAXB introspector as a fallback, you would do:
+```
+    AnnotationIntrospector primary = new JacksonAnnotationIntrospector();
+    AnnotationIntrospector secondary = new JaxbAnnotationIntrospector();
+    AnnotationIntrospector pair = new AnnotationIntrospector.Pair(primaryIntrospector, secondaryIntropsector);
+```
+and then configure ObjectMapper as shown above.
+
 
 ## Polymorphic type handling
 
@@ -127,6 +136,16 @@ Starting with version 1.5, Jackson allows fully configurable Polymorphic Type Ha
 - `@JsonTypeIdResolver` (class) can be used to replace standard type id converter (type to/from JSON String) with a custom version; for example, to create more convenient handler for using logical type names.
 
 
+## Mix-In
+
+Here are some notes on what kinds of annotations can be used, and for what purpose:
+
+- All annotation sets that Jackson recognizes (core annotations, JAXB extensions) can be mixed in
+- All kinds of annotations (member method, static method, field, constructor annotations) can be mixed in
+- Only method (and field) name and signature are used for matching annotations: access definitions (private, protected, ...) and method implementations are ignored
+    - hint: since method implementations are ignored, it often makes sense to define mix-ins as **interfaces** or **abstract** classes
+    - hint: if you can, it often makes sense to define mix-in class as a **sub-class** of target class, and use @Override JDK annotation to ensure method name and signature match
+- Mix-ins work as expected within inheritance hierarchy: it is feasible (and useful) to attach mix-in annotations to super-classes -- if so, mix-in annotations can further be overridden by annotations sub-classes (of target) provide.
 
 
 
@@ -134,3 +153,4 @@ Starting with version 1.5, Jackson allows fully configurable Polymorphic Type Ha
 - http://wiki.fasterxml.com/JacksonFAQ
 - http://wiki.fasterxml.com/JacksonAnnotations
 - http://wiki.fasterxml.com/JacksonJAXBAnnotations
+- http://wiki.fasterxml.com/JacksonMixInAnnotations
