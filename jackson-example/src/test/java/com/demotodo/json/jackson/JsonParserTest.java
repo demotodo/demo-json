@@ -15,6 +15,8 @@ public class JsonParserTest {
         String carJson = "{ \"brand\" : \"Mercedes\", \"doors\" : 5 }";
 
         JsonFactory factory = new JsonFactory();
+        factory.configure(JsonParser.Feature.AUTO_CLOSE_SOURCE, true);
+
         JsonParser parser = factory.createParser(carJson);
 
         Car car = new Car();

@@ -1,5 +1,6 @@
 package com.demotodo.json.jackson;
 
+import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Test;
@@ -35,6 +36,9 @@ public class ObjectMapperTest {
         JsonNode node = objectMapper.readValue(carJson, JsonNode.class);
 
         System.out.println(node.get("brand").asText());
+
+        // Reading JSON tokens from these sources is significantly more efficient than re-parsing JSON content from textual representation.
+        JsonParser jsonParser = node.traverse();
     }
 
     @Test
