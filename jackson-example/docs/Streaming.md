@@ -1,3 +1,15 @@
+## Processing Models
+
+**Which processing models (streaming, tree, objects) does Jackson implement?**
+
+Three main methods (one with 2 alternatives) are implemented:
+
+- Streaming/incremental parsing (reading) and generation (writing) of JSON content
+- Tree model (based on JsonNodes)
+- Data binding to/from Java objects (POJOs, Beans, primitives, lists/arrays/maps)
+    - alternative "untyped" binding to only use Lists/Maps/String/Boolean/Number/null (bind to Object.class)
+
+
 ## Processing model: Streaming API
 
 aka **Incremental Processing**, or **Token Streams**
