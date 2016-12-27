@@ -28,3 +28,14 @@ Here are some notes on what kinds of annotations can be used, and for what purpo
     - hint: since method implementations are ignored, it often makes sense to define mix-ins as **interfaces** or **abstract** classes
     - hint: if you can, it often makes sense to define mix-in class as a **sub-class** of target class, and use @Override JDK annotation to ensure method name and signature match
 - Mix-ins work as expected within inheritance hierarchy: it is feasible (and useful) to attach mix-in annotations to super-classes -- if so, mix-in annotations can further be overridden by annotations sub-classes (of target) provide.
+
+
+## XML Annotations
+
+https://github.com/FasterXML/jackson-dataformat-xml/wiki/Jackson-XML-annotations
+
+- `@JacksonXmlElementWrapper` allows specifying XML element to use for wrapping `List` and `Map` properties
+- `@JacksonXmlProperty` allows specifying XML namespace and local name for a property; as well as whether property is to be written as an XML element or attribute.
+- `@JacksonXmlRootElement` allows specifying XML element to use for wrapping the root element (default uses 'simple name' of the value class)
+- `@JacksonXmlText` allows specifying that value of one property is to be serialized as "unwrapped" text, and not in an element.
+- `@JacksonXmlCData` allows specifying that the value of a property is to be serialized within a CData tag.
