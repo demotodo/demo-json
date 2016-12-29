@@ -19,6 +19,7 @@ dependencies {
             "com.fasterxml.jackson.datatype:jackson-datatype-joda:${jacksonVersion}",
             "com.fasterxml.jackson.datatype:jackson-datatype-guava:${jacksonVersion}",
 //            "com.fasterxml.jackson.datatype:jackson-datatypes-collections:2.8.4",
+            "com.fasterxml.jackson.datatype:jackson-datatype-json-org:${jacksonVersion}",
 
             "com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:${jacksonVersion}",
             "com.fasterxml.jackson.jaxrs:jackson-jaxrs-xml-provider:${jacksonVersion}",
@@ -26,7 +27,6 @@ dependencies {
             "com.fasterxml.jackson.module:jackson-module-parameter-names:${jacksonVersion}",
             "com.fasterxml.jackson.module:jackson-module-jaxb-annotations:${jacksonVersion}",
             "com.fasterxml.jackson.module:jackson-module-afterburner:${jacksonVersion}",
-
-            "com.fasterxml.jackson.module:jackson-module-swagger:0.5.0",
+            "com.fasterxml.jackson.module:jackson-module-mrbean:${jacksonVersion}",
     )
 }

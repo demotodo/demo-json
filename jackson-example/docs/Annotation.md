@@ -18,8 +18,6 @@ Usage samples, see https://github.com/FasterXML/jackson-annotations
 
 ## Mixin Annotations
 
-See http://wiki.fasterxml.com/JacksonMixInAnnotations
-
 Here are some notes on what kinds of annotations can be used, and for what purpose:
 
 - All annotation sets that Jackson recognizes (core annotations, JAXB extensions) can be mixed in
@@ -28,6 +26,10 @@ Here are some notes on what kinds of annotations can be used, and for what purpo
     - hint: since method implementations are ignored, it often makes sense to define mix-ins as **interfaces** or **abstract** classes
     - hint: if you can, it often makes sense to define mix-in class as a **sub-class** of target class, and use @Override JDK annotation to ensure method name and signature match
 - Mix-ins work as expected within inheritance hierarchy: it is feasible (and useful) to attach mix-in annotations to super-classes -- if so, mix-in annotations can further be overridden by annotations sub-classes (of target) provide.
+
+See Also:
+- https://github.com/FasterXML/jackson-annotations/wiki/Mixin-Annotations
+- http://wiki.fasterxml.com/JacksonMixInAnnotations
 
 
 ## XML Annotations

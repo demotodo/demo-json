@@ -17,4 +17,24 @@ public class PropertyNameStrategyTest {
 
         System.out.println(objectMapper.writeValueAsString(new Car()));
     }
+
+    //   class MyBean {
+    //       private String inReply;
+    //       public void setInReplyToUserId(String s) { inReply = s; }
+    //       public String getInReplyToUserId() { return inReply; }
+    //   }
+    //
+    //   class MyNaming extends PropertyNamingStrategy {
+    //       @Override
+    //       public String nameForGetterMethod(MapperConfig<?> config,
+    //                                         AnnotatedMethod method, String defaultName)
+    //       {
+    //           // Replace underscore+letter with upper-case(letter)
+    //           // (left as exercise to reader!)
+    //           return convertName(defaultName);
+    //       }
+    //   }
+    //
+    // objectMapper.setPropertyNamingStrategy(new MyNaming());
+    //   // and serialize, deserialize values as
 }

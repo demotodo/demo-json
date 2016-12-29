@@ -13,7 +13,6 @@ class B {
 }
 
 A root = new A();
-}}}
 ```
 
 Now, I would like to serialize instance root in a following way: serialize all fields that belong to the root but for root.child serialize only name. So result would be:
@@ -24,7 +23,6 @@ Now, I would like to serialize instance root in a following way: serialize all f
      "info": { "distance":100, "id":"123"},
      "child": {"name": "lalala"}
    }
-}}}
 ```
 
 
